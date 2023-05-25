@@ -1,12 +1,10 @@
 import './App.css';
-import CopyRight from './components/CopyRight';
-import TopHeader from './pages/header/TopHeader';
+import Header from './pages/header/Header';
 
 function App() {
   return (
     <>
-      <TopHeader />
-      {/* <CopyRight /> */}
+      <Header />
     </>
   );
 }

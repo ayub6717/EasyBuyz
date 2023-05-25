@@ -37,7 +37,7 @@ const SelectField = ({CustomField, data}) => {
       ...base,
       border: 0,
       backgroundColor: CustomField ? '#F2F2F2' : '#FCCA19',
-      height: CustomField ? '42px' : '',
+      height: CustomField ? '' : '',
       boxShadow: state.isFocused ? 0 : 0,
       borderColor: state.isFocused
         ? brandColor
@@ -57,14 +57,12 @@ const SelectField = ({CustomField, data}) => {
     },
     dropdownIndicator: (provided, state) => ({
       ...provided,
-      color: '#898989',
+      color: '#2c2c2c',
       cursor:'pointer',
+      padding:0,
       'svg':{
         width:'14px',
         height:'14px',
-        '&hover':{
-            color:'#898989',
-          },
         },
       }),
       menuList: base => ({
@@ -77,7 +75,7 @@ const SelectField = ({CustomField, data}) => {
   return (
     <div>
       <Select styles={customStyles}
-        className={`${CustomField ? 'w-full':'w-[100px] focus-none'}`}
+        className={`${CustomField ? 'w-full':'w-full focus-none'}`}
         value={selectedBranch}
         options={data}
         onChange={handleChange}
