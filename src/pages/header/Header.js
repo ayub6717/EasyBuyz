@@ -15,7 +15,7 @@ function Header() {
                     <div className='w-[40%]'>
                         <SearchField />
                     </div>
-                    <div className='w-[40%]'>
+                    <div className='w-[40%] bg-[#2c2c2c]'>
                         
                     </div>
                 </div>
