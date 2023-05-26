@@ -16,7 +16,7 @@ function Header() {
                         <SearchField />
                     </div>
                     <div className='w-[40%]'>
-                        
+                        create a demo data
                     </div>
                 </div>
             </div>
