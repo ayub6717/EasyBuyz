@@ -10,7 +10,7 @@ function classNames(...classes) {
 export default function Dropdown(props) {
     const {dropImg, DropName, Share} = props
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left float-right">
       <div>
         <Menu.Button className={`${Share ? 'flex-row':'flex-col justify-center'} flex items-center`}>
           {dropImg && <img className={`${Share ? 'rounded-none h-auto w-auto' : 'flex-col justify-center bg-gray-100 items-center h-7 w-7 rounded-full dark:text-gray-2 hover:text-purple-500 cursor-pointer'} flex`} 
