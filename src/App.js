@@ -1,10 +1,10 @@
 import './App.css';
-import Header from './pages/header/Header';
+import HeaderIndex from './pages/header/HeaderIndex';
 
 function App() {
   return (
     <>
-      <Header />
+      <HeaderIndex />
     </>
   );
 }

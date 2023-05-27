@@ -17,7 +17,7 @@ function TopHeader({data}) {
   return (
     <div>
         <div className='bg-[#FCCA19] font-dm-sans'>
-            <div className='py-2 mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
+            <div className='mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
                 <div className='flex justify-between'>
                     <div className='flex gap-[30px]'>
                         <TopHeadBtn name="+12013828902" img={callImg} />
