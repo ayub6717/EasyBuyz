@@ -3,10 +3,8 @@ import React from 'react'
 function MultiLevelDropdown() {
     return (
 
-        <div className='mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
-            <div className='flex'>
-                <div className="w-[328px]">
-                    <ul className="bg-white border rounded-sm relative h-[490px]">
+        <div>
+            <ul className="bg-white border rounded-sm relative h-[490px]">
                         <li className="rounded-sm px-3 py-3 hover:bg-gray-100 border-b">
                             <button
                                 className="w-full text-left flex items-center outline-none focus:outline-none"
@@ -26,7 +24,7 @@ function MultiLevelDropdown() {
                             </button>
                             <ul
                                 className="bg-white border rounded-sm absolute top-0 right-0.5 
-                                 origin-top-left h-full w-[270px]"
+                                 origin-top-left h-full w-[270px] z-50"
                             >
                                 <li className="px-3 py-3 hover:bg-gray-100 border-b">Javascript 4</li>
                                 <li className="rounded-sm px-3 py-3 hover:bg-gray-100 border-b">
@@ -48,7 +46,7 @@ function MultiLevelDropdown() {
                                 </button>
                             <ul
                                 className="bg-white border rounded-sm absolute -top-px right-0.5 
-                                 origin-top-left h-full w-[270px]"
+                                 origin-top-left h-full w-[270px] z-50"
                             >
                                 <li className="px-3 py-3 hover:bg-gray-100 border-b">Javascript</li>
                                 <li className="rounded-sm px-3 py-3 hover:bg-gray-100 min-h-min border-b">
@@ -97,8 +95,7 @@ function MultiLevelDropdown() {
                                             </svg>
                                         </span>
                                     </button>
-                                    <ul className="bg-white border rounded-sm absolute -top-px right-0.5 origin-top-left w-[270px] h-full"
-                                    >
+                                    <ul className="bg-white border rounded-sm absolute -top-px right-0.5 origin-top-left w-[270px] h-full z-50">
                                         <li className="px-3 py-3 hover:bg-gray-100 border-b">2.7</li>
                                         <li className="px-3 py-3 hover:bg-gray-100">3+</li>
                                     </ul>
@@ -126,10 +123,7 @@ function MultiLevelDropdown() {
                                     </svg>
                                 </span>
                             </button>
-                            <ul
-                                className="bg-white border rounded-sm absolute top-0 right-0.5 
-                                 origin-top-left h-full w-[270px]"
-                            >
+                            <ul className="bg-white border rounded-sm absolute top-0 right-0.5 origin-top-left h-full w-[270px] z-50">
                                 <li className="px-3 py-3 hover:bg-gray-100 border-b">Javascript</li>
                                 <li className="rounded-sm px-3 py-3 hover:bg-gray-100 min-h-min border-b">
                                     <button
@@ -166,11 +160,6 @@ function MultiLevelDropdown() {
                         <li className="rounded-sm px-3 py-3 hover:bg-gray-100 border-b">Programming</li>
                         <li className="rounded-sm px-3 py-3 hover:bg-gray-100">Testing</li>
                     </ul>
-                </div>
-                <div className='w-[100%] p-4'>
-                    Slider will be add
-                </div>
-            </div>
         </div>
     )
 }

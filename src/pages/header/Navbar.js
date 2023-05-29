@@ -4,6 +4,7 @@ import Phone from '../../assets/svg/phone.svg'
 import Dropdown from '../../components/Dropdown'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
+import Slider from '../../components/Slider'
 function Navbar() {
   return (
     <div>
@@ -11,7 +12,7 @@ function Navbar() {
             <div className='border-b border-[#dfdfdf]'>
                 <div className='mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
                     <div className='flex gap-6'>
-                        <div className='flex items-center justify-between w-[333px] bg-[#F3F3F3] pl-5 pr-3 py-5'>
+                        <div className='w-[22%] flex items-center justify-between bg-[#F3F3F3] pl-5 pr-3 py-5'>
                             <div className='flex gap-3'>
                                 <img src={categoryIcon} alt="" />
                                 <p>Categories</p>
@@ -22,17 +23,24 @@ function Navbar() {
                                 </svg>
                             </div>
                         </div>
-                        <div className='w-[80%] py-5'>
+                        <div className='w-[78%] flex justify-between py-5'>
                             <MenuBar />
-                        </div>
-                        <div className='w-[20%] py-5'>
                             <Dropdown dropImg={Phone} DropName="Download Our App" Share />
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <MultiLevelDropdown />
+                <div className='mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
+                    <div className='flex'>
+                        <div className="w-[21.5%]">
+                            <MultiLevelDropdown />
+                        </div>
+                        <div className='w-[78.5%] p-4 border'>
+                            <Slider />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
