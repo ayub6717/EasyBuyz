@@ -36,7 +36,7 @@ function Navbar() {
                         <div className="w-[21.5%]">
                             <MultiLevelDropdown />
                         </div>
-                        <div className='w-[78.5%] p-4 border'>
+                        <div className='w-[78.5%] pl-6 pt-4'>
                             <Slider />
                         </div>
                     </div>

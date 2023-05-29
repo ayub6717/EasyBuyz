@@ -6,9 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import slideOne from "../assets/images/slider/slide-one.png"
+import slideTwo from "../assets/images/slider/slide-two.png"
+import slideThree from "../assets/images/slider/slide-three.png"
+import slideFour from "../assets/images/slider/slide-four.png"
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Slider() {
   return (
@@ -17,22 +21,29 @@ export default function Slider() {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+            <img src={slideOne} alt={slideOne} />
+        </SwiperSlide>
+        <SwiperSlide>
+            <img src={slideTwo} alt={slideTwo} />
+        </SwiperSlide>
+        <SwiperSlide>
+            <img src={slideThree} alt={slideThree} />
+        </SwiperSlide>
+        <SwiperSlide>
+            <img src={slideFour} alt={slideFour} />
+        </SwiperSlide>
       </Swiper>
     </>
   );
