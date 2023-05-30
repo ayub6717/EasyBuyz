@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useRef } from "react";
+import  React, { useState, useRef } from "react";
 import { useOnHoverOutside } from "../../hooks/useOnHoverOutside";
 import Menu from "../../components/menu";
 function MenuBar() {
