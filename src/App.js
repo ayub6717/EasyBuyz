@@ -1,10 +1,9 @@
 import './App.css';
-import HeaderIndex from './pages/header/HeaderIndex';
-
+import HomeLayout from './layouts/HomeLayout';
 function App() {
   return (
     <>
-      <HeaderIndex />
+      <HomeLayout />
     </>
   );
 }
