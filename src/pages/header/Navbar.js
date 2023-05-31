@@ -5,6 +5,10 @@ import Dropdown from '../../components/Dropdown'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
 import Slider from '../../components/Slider'
+import slideOne from "../../assets/images/slider/slide-one.png"
+import slideTwo from "../../assets/images/slider/slide-two.png"
+import slideThree from "../../assets/images/slider/slide-three.png"
+import slideFour from "../../assets/images/slider/slide-four.png"
 function Navbar() {
   return (
     <div>
@@ -37,7 +41,7 @@ function Navbar() {
                             <MultiLevelDropdown />
                         </div>
                         <div className='w-[78.5%] pl-6 pt-4'>
-                            <Slider />
+                            <Slider slideOne={slideOne} slideTwo={slideTwo} slideThree={slideThree} slideFour={slideFour} />
                         </div>
                     </div>
                 </div>

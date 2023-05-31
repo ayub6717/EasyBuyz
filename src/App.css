@@ -51,4 +51,8 @@ li:hover>ul{
   .trans-effect {
     transition: .3s;
   }
+  .rev-img:hover img {
+        -webkit-transform:scaleX(-1);
+        transform: scaleX(-1)
+    }
   
