@@ -13,7 +13,7 @@ li:hover>ul{
   .min-w-32 { min-width: 8rem }
 
   
-.swiper {
+.mySwiper {
     width: 100%;
     height: 474px;
   }

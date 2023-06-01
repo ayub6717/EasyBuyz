@@ -21,16 +21,12 @@ function BestDealIndex() {
         },
         {
             id:2,
-            url: slideTwo
+            url: 'https://demo.martvill.techvill.net/public/uploads/20221205/df0c8982b5edc94493c84fe23c95c5e2.png'
         },
         {
             id:3,
-            url: slideThree
+            url: 'https://demo.martvill.techvill.net/public/uploads/20221205/bdf1b2983bbb8fdd1660117bad20b550.png'
         },
-        {
-            id:3,
-            url: slideFour
-        }
     ]
   return (
     <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12">
@@ -41,21 +37,16 @@ function BestDealIndex() {
     <div className="md:flex md:gap-5 gap-0">
         <div className="md:w-[322px] w-full pb-2">
             <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            pagination={{
-            clickable: true,
-            }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-        >
-
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                navigation={false}
+                modules={[Autoplay, Pagination, Navigation]}
+            >
                 {slideImg.map((item) => {
                     return (
                     <SwiperSlide key={item.id}>
@@ -63,8 +54,7 @@ function BestDealIndex() {
                     </SwiperSlide>
                     )
                 })}
-
-        </Swiper>
+            </Swiper>
         </div>
         <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
