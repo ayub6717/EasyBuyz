@@ -3,13 +3,35 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
-import Slider from '../../components/Slider'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import slideOne from "../../assets/images/slider/sideImg.png"
-import slideTwo from "../../assets/images/slider/slide-three.png"
-import slideThree from "../../assets/images/slider/slide-two.png"
+import slideTwo from "../../assets/images/slider/slide-two.png"
+import slideThree from "../../assets/images/slider/slide-three.png"
 import slideFour from "../../assets/images/slider/slide-four.png"
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 function BestDealIndex() {
+    const slideImg = [
+        {
+            id:1,
+            url: slideOne,
+        },
+        {
+            id:2,
+            url: slideTwo
+        },
+        {
+            id:3,
+            url: slideThree
+        },
+        {
+            id:3,
+            url: slideFour
+        }
+    ]
   return (
     <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12">
     <div className="flex md:justify-center justify-center items-center mb-2.5 md:mb-5">
@@ -18,7 +40,31 @@ function BestDealIndex() {
     </div>
     <div className="md:flex md:gap-5 gap-0">
         <div className="md:w-[322px] w-full pb-2">
-         <Slider slideOne={slideOne} slideTwo={slideTwo} slideThree={slideThree} slideFour={slideFour} />
+            <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            pagination={{
+            clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+        >
+
+                {slideImg.map((item) => {
+                    return (
+                    <SwiperSlide key={item.id}>
+                        <img src={item.url} alt={item.url} />
+                    </SwiperSlide>
+                    )
+                })}
+
+        </Swiper>
         </div>
         <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
