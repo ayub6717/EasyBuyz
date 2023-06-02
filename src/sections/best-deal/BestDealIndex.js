@@ -8,9 +8,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import slideOne from "../../assets/images/slider/sideImg.png"
-import slideTwo from "../../assets/images/slider/slide-two.png"
-import slideThree from "../../assets/images/slider/slide-three.png"
-import slideFour from "../../assets/images/slider/slide-four.png"
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 function BestDealIndex() {
