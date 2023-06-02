@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
+import ShopBtn from '../../components/ShopBtn'
 
 function ElelctronicIndex() {
   return (
@@ -153,8 +154,18 @@ function ElelctronicIndex() {
                     </div>
                 </div>
             </div>
-            <div className="md:w-[322px] w-full pb-2">
-                <img src="https://demo.martvill.techvill.net/public/uploads/20221205/cba5deddcae3205d94259425a9ff5bbe.png" alt="" />
+            <div className="md:w-322p w-full pb-2">
+                <div className="relative h-600p w-full ">
+                    <img className="w-full h-full object-cover rounded-md" src="https://demo.martvill.techvill.net/public/uploads/20221205/cba5deddcae3205d94259425a9ff5bbe.png" alt="Image" />
+                    <div className="absolute top-0 p-6">
+                        <p className="text-xs text-gray-1">
+                            <span>Visit</span>
+                        </p>
+                        <p className="text-gray-12 font-medium text-lg uppercase">Electronic</p>
+                        <p className="text-gray-12 font-bold text-2.5xl -mt-1.5 uppercase">Accessories</p>
+                        <ShopBtn />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
