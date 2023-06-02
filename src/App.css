@@ -55,4 +55,11 @@ li:hover>ul{
         -webkit-transform:scaleX(-1);
         transform: scaleX(-1)
     }
+    .process-goto svg {
+      transition: right .2s!important;
+      right: 0!important;
+  }
+    .process-goto:hover svg {
+      right: -5px!important;
+  }
   
