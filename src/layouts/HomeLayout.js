@@ -3,6 +3,7 @@ import HeaderIndex from '../pages/header/HeaderIndex'
 import BannerIndex from '../sections/banner/BannerIndex'
 import TopCategory from '../sections/top-category/TopCategory'
 import BestDealIndex from '../sections/best-deal/BestDealIndex'
+import ElelctronicIndex from '../sections/Electronics/ElelctronicIndex'
 
 function HomeLayout() {
   return (
@@ -11,6 +12,7 @@ function HomeLayout() {
         <BannerIndex />
         <TopCategory />
         <BestDealIndex /> 
+        <ElelctronicIndex />
     </div>
   )
 }
