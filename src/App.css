@@ -62,4 +62,8 @@ li:hover>ul{
     .process-goto:hover svg {
       right: -5px!important;
   }
+  .promote-img{
+    background:linear-gradient(to right, #FDFDFD 21.44%, rgba(223, 223, 223, 0) 70.79%), url('https://demo.martvill.techvill.net/public/uploads/20221205/2dcff5a961eb2a3127b2fe3b87861d99.png');
+    height: 270px !important
+  }
   
