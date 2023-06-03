@@ -5,6 +5,8 @@ import TopCategory from '../sections/top-category/TopCategory'
 import BestDealIndex from '../sections/best-deal/BestDealIndex'
 import ElelctronicIndex from '../sections/Electronics/ElelctronicIndex'
 import ProductBnrIndex from '../sections/banner/ProductBnrIndex'
+import DigiproIndex from '../sections/Digital-product/DigiproIndex'
+import BrandIndex from '../sections/top-brand/BrandIndex'
 
 function HomeLayout() {
   return (
@@ -15,6 +17,8 @@ function HomeLayout() {
         <BestDealIndex /> 
         <ElelctronicIndex />
         <ProductBnrIndex />
+        <DigiproIndex />
+        <BrandIndex />
     </div>
   )
 }
