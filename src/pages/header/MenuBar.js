@@ -1,6 +1,7 @@
 import  React, { useState, useRef } from "react";
 import { useOnHoverOutside } from "../../hooks/useOnHoverOutside";
-import Menu from "../../components/menu";
+import Menu from './../../components/common/menu';
+
 function MenuBar() {
     const dropdownRef = useRef(null); // Create a reference for dropdown container
     const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);

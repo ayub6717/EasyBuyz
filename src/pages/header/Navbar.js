@@ -1,10 +1,10 @@
 import React from 'react'
 import categoryIcon from '../../assets/svg/category.svg'
 import Phone from '../../assets/svg/phone.svg'
-import Dropdown from '../../components/Dropdown'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
 import Slider from '../../components/Slider'
+import Dropdown from '../../components/common/Dropdown'
 function Navbar() {
   return (
     <div>

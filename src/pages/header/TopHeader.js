@@ -5,7 +5,7 @@ import smsImg from '../../assets/svg/sms.svg'
 import globalImg from '../../assets/svg/global.svg'
 import compareImg from '../../assets/svg/compare.svg'
 import sellerImg from '../../assets/svg/seller.svg'
-import SelectField from '../../components/SelectField'
+import SelectField from './../../components/common/SelectField';
 
 function TopHeader({data}) {
     const branch = [
