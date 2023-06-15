@@ -1,5 +1,5 @@
 import React from 'react'
-import TopHeadBtn from '../../components/TopHeadBtn'
+import TopHeadBtn from '../../components/common/TopHeadBtn'
 import callImg from '../../assets/svg/call.svg'
 import smsImg from '../../assets/svg/sms.svg'
 import globalImg from '../../assets/svg/global.svg'

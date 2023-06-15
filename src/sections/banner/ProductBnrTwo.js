@@ -1,5 +1,5 @@
 import React from 'react'
-import ShopBtn from '../../components/ShopBtn'
+import ShopBtn from '../../components/common/ShopBtn'
 
 function ProductBnrTwo(props) {
     const {proImg, tittle_one, tittle_two, tittle_three} = props

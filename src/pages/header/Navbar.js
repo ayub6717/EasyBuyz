@@ -3,7 +3,7 @@ import categoryIcon from '../../assets/svg/category.svg'
 import Phone from '../../assets/svg/phone.svg'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
-import Slider from '../../components/Slider'
+import Slider from '../../components/common/Slider'
 import Dropdown from '../../components/common/Dropdown'
 function Navbar() {
   return (

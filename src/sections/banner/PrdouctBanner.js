@@ -1,5 +1,5 @@
 import React from 'react'
-import ShopBtn from "../../components/ShopBtn";
+import ShopBtn from "../../components/common/ShopBtn";
 import ProductBnrTwo from './ProductBnrTwo';
 import proImg from '../../assets/images/banner/banImg.png'
 import bannerTwo from '../../assets/images/banner/bannerTwo.png'

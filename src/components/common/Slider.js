@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import slideOne from "../assets/images/slider/slide-one.png"
-import slideTwo from "../assets/images/slider/slide-two.png"
-import slideThree from "../assets/images/slider/slide-three.png"
-import slideFour from "../assets/images/slider/slide-four.png"
+import slideOne from "../../assets/images/slider/slide-one.png"
+import slideTwo from "../../assets/images/slider/slide-two.png"
+import slideThree from "../../assets/images/slider/slide-three.png"
+import slideFour from "../../assets/images/slider/slide-four.png"
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
