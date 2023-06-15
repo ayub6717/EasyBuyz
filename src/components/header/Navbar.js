@@ -3,8 +3,8 @@ import categoryIcon from '../../assets/svg/category.svg'
 import Phone from '../../assets/svg/phone.svg'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
-import Slider from '../../components/common/Slider'
-import Dropdown from '../../components/common/Dropdown'
+import Slider from '../common/Slider'
+import Dropdown from '../common/Dropdown'
 function Navbar() {
   return (
     <div>
@@ -18,7 +18,7 @@ function Navbar() {
                                 <p>Categories</p>
                             </div>
                             <div>
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
                                 </svg>
                             </div>

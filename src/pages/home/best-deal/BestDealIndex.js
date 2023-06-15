@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import slideOne from "../../assets/images/slider/sideImg.png"
+import slideOne from "../../../assets/images/slider/sideImg.png"
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 function BestDealIndex() {

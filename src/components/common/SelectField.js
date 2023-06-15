@@ -37,7 +37,7 @@ const SelectField = ({CustomField, data}) => {
       ...base,
       border: 0,
       backgroundColor: CustomField ? '#F2F2F2' : '#FCCA19',
-      height: CustomField ? '' : '',
+      height: CustomField ? 'true' : '',
       boxShadow: state.isFocused ? 0 : 0,
       borderColor: state.isFocused
         ? brandColor

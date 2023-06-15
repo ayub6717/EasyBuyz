@@ -1,8 +1,8 @@
 import React from 'react'
-import ShopBtn from "../../components/common/ShopBtn";
+import ShopBtn from "../../../components/common/ShopBtn";
 import ProductBnrTwo from './ProductBnrTwo';
-import proImg from '../../assets/images/banner/banImg.png'
-import bannerTwo from '../../assets/images/banner/bannerTwo.png'
+import proImg from '../../../assets/images/banner/banImg.png'
+import bannerTwo from '../../../assets/images/banner/bannerTwo.png'
 
 function PrdouctBanner() {
   return (
@@ -19,7 +19,7 @@ function PrdouctBanner() {
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row md:gap-[30px] gap-[15px] my-10 font-dm-sans">
+        <div className="flex flex-col md:flex-row md:gap-[30px] gap-[15px] my-10 font-dm-sans">
             <ProductBnrTwo proImg={proImg} tittle_one="ELECTRONICS" tittle_two="ELECTROFY" tittle_three="YOUR LIFW" />
             <ProductBnrTwo proImg={bannerTwo} tittle_one="SHOES" tittle_two="ADD STYLES TO" tittle_three="YOUR FEET" />
         </div>

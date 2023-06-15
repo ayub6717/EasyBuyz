@@ -1,12 +1,12 @@
 import React from 'react'
 import Logo from '../../assets/images/logos/logo.png'
-import SearchField from '../../components/common/SearchField'
-import Dropdown from '../../components/common/Dropdown'
+import SearchField from '../common/SearchField'
+import Dropdown from '../common/Dropdown'
 import dropImg from '../../assets/images/profile/user.png'
 import wishlist from '../../assets/svg/wishlist.svg'
 import cart from '../../assets/svg/cart.svg'
 import trackOrder from '../../assets/svg/trackOrder.svg'
-import TopHeadBtn from '../../components/common/TopHeadBtn'
+import TopHeadBtn from '../common/TopHeadBtn'
 function Header() {
   return (
     <>

@@ -1,6 +1,6 @@
 import React from 'react'
 import MixedContent from './MixedContent'
-import ShipIcon from '../../assets/images/banner/ShipIcon.png'
+import ShipIcon from '../../../assets/images/banner/ShipIcon.png'
 import CouponInfo from './CouponInfo'
 function BannerIndex() {
   return (

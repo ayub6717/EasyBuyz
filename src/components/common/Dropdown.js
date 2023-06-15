@@ -1,3 +1,4 @@
+/* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -36,7 +37,7 @@ export default function Dropdown(props) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -49,7 +50,7 @@ export default function Dropdown(props) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -62,7 +63,7 @@ export default function Dropdown(props) {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -72,7 +73,7 @@ export default function Dropdown(props) {
                 </a>
               )}
             </Menu.Item>
-            <form method="POST" action="#">
+            <form method="POST" action="javascript:void(0)">
               <Menu.Item>
                 {({ active }) => (
                   <button

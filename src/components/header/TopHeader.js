@@ -1,11 +1,11 @@
 import React from 'react'
-import TopHeadBtn from '../../components/common/TopHeadBtn'
+import TopHeadBtn from '../common/TopHeadBtn'
 import callImg from '../../assets/svg/call.svg'
 import smsImg from '../../assets/svg/sms.svg'
 import globalImg from '../../assets/svg/global.svg'
 import compareImg from '../../assets/svg/compare.svg'
 import sellerImg from '../../assets/svg/seller.svg'
-import SelectField from './../../components/common/SelectField';
+import SelectField from '../common/SelectField';
 
 function TopHeader({data}) {
     const branch = [
