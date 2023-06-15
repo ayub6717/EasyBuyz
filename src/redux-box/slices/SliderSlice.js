@@ -16,7 +16,7 @@ const SliderSlice = () => {
       return <div>Error occurred while fetching sliders.</div>;
     }
   
-    const displayedSliders = sliders?.response?.records?.data?.slice(0, 3);
+    const displayedSliders = sliders?.response?.records?.data?.slice(0, 1);
   
     if (!displayedSliders?.length) {
       return <div>No sliders available.</div>;

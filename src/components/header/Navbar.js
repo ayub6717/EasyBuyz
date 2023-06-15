@@ -3,8 +3,8 @@ import categoryIcon from '../../assets/svg/category.svg'
 import Phone from '../../assets/svg/phone.svg'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
-import Slider from '../common/Slider'
 import Dropdown from '../common/Dropdown'
+import SliderSlice from '../../redux-box/slices/SliderSlice'
 function Navbar() {
   return (
     <div>
@@ -37,7 +37,7 @@ function Navbar() {
                             <MultiLevelDropdown />
                         </div>
                         <div className='w-[78.5%] pl-6 pt-4'>
-                            <Slider />
+                            <SliderSlice />
                         </div>
                     </div>
                 </div>
