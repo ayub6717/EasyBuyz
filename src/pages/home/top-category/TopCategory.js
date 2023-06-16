@@ -3,12 +3,15 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { useGetTopCategoriesQuery } from '../../../redux-box/api/topCategoryApi';
+import TopCategorySkeleton from '../../../components/Skeleton/TopCategorySkeleton';
 
 
 function TopCategory() {
     const { data: category, isLoading, isError } = useGetTopCategoriesQuery();
     if (isLoading) {
-      return <div>Loadingsafdsfsdf...</div>;
+      return <div>
+        <TopCategorySkeleton/>
+      </div>;
     }
   
     if (isError) {
