@@ -2,10 +2,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
-
+// import TopCategories from '../../../redux-box/slices/TopCategories'
+// import { useGetTopCategoriesQuery } from '../../../redux-box/api/topCategoryApi';
 function TopCategory() {
+    // const { data: topCategories, isLoading, isError } = useGetTopCategoriesQuery();
+
+    // if (isLoading) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // if (isError) {
+    //     return <div>Error loading top categories</div>;
+    // }
     return (
         <div>
+            {/* <div>
+            {topCategories?.data?.map((category) => (
+                <div key={category.slug}>
+                <h2>{category.name}</h2>
+                <p>Slug: {category.slug}</p>
+                <p>Product URL: {category.product_url}</p>
+                </div>
+            ))}
+            </div> */}
+
+            {/* <TopCategories/> */}
             <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12 font-dm-sans">
                 <p className="text-center font-bold text-sm md:text-[22px] text-gray-12 mb-2.5 md:mb-5 uppercase">
                     Top Categories Of the Month
