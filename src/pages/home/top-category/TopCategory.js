@@ -7,29 +7,18 @@ import TopCategorySkeleton from '../../../components/Skeleton/TopCategorySkeleto
 
 
 function TopCategory() {
+    
     const { data: category, isLoading, isError } = useGetTopCategoriesQuery();
-    if (isLoading) {
-      return <div>
-        <TopCategorySkeleton/>
-      </div>;
-    }
-  
-    if (isError) {
-      return <div>Error loading top categories</div>;
-    }
-  
     const displayedCategory = category?.response?.records?.data?.slice(13, 20);
     
-    if (!displayedCategory?.length) {
-      return <div>No Top Categorie Available</div>;
-    }
-  
     return (
         <div>
             <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12 font-dm-sans">
                 <p className="text-center font-bold text-sm md:text-[22px] text-gray-12 mb-2.5 md:mb-5 uppercase">
                     Top Categories Of the Month
                 </p>
+                {isLoading && <TopCategorySkeleton/>}
+                {isError && <div>Error loading top categories</div>}
                 <div className="grid grid-flow-col gap-7 auto-cols-max overflow-auto scrollbar-w-2">
                     {!isLoading && !isError && displayedCategory.length && displayedCategory.map((item) => (
                         <a href={"javascript:void(0)"}>
