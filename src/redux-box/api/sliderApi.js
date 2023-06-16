@@ -1,4 +1,4 @@
-import { baseApi } from "./base";
+import { baseApi } from "../../utils/base";
 
 export const sliderApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({

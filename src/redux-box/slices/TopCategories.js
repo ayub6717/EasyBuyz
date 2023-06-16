@@ -3,8 +3,6 @@ import { useGetTopCategoriesQuery } from '../api/topCategoryApi';
 
 const TopCategories = () => {
   const { data: category, isLoading, isError } = useGetTopCategoriesQuery();
-//   console.log(useGetTopCategoriesQuery());
-
   if (isLoading) {
     return <div>Loadingsafdsfsdf...</div>;
   }

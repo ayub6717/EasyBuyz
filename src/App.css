@@ -83,3 +83,12 @@ li:hover>ul{
     transform: scale(1.2);
  }
   
+ .scrollbar-w-2::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.scrollbar-w-2::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+  border-radius: 76px;
+  max-height: 10px;
+}

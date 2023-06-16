@@ -1,25 +1,9 @@
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-// const baseUrl = process.env.REACT_APP_API_BASE_URL;
-
-// export const categoryApi = createApi({
-//   reducerPath: 'api',
-//   baseQuery: fetchBaseQuery({ baseUrl }),
-//   endpoints: (builder) => ({
-//     getTopCategories: builder.query({
-//       query: () => 'user/categories/top',
-//     }),
-//   }),
-// });
-// export const { useGetTopCategoriesQuery } = categoryApi;
-
-
-import { baseApi } from "./base";
+import { baseApi } from "../../utils/base";
 
 export const categoriesApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({
 		getTopCategories: build.query({
-			query: () => `user/categories/top`,
+			query: () => `user/categories/top?status=Active`,
 		}),
 	}),
     overrideExisting: false,
