@@ -9,8 +9,13 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import slideOne from "../../../assets/images/slider/sideImg.png"
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { useGetProductQuery } from '../../../redux-box/api/productApi';
+
 
 function BestDealIndex() {
+    const { data, isLoading, isError } = useGetProductQuery();
+    const products = data?.response?.records?.data?.slice(0,8);
+
     const slideImg = [
         {
             id:1,
@@ -27,6 +32,16 @@ function BestDealIndex() {
     ]
   return (
     <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12">
+        <div>
+        {isLoading && <h1>loading..</h1>}
+        {isError && <div>Error loading top categories</div>}
+      {products?.map((product) => (
+        <div key={product.id}>
+          <h3> </h3>
+          <p>{product.summary}</p>
+        </div>
+      ))}
+    </div>
     <div className="flex md:justify-center justify-center items-center mb-2.5 md:mb-5">
         <p className="font-bold text-sm md:text-[22px] text-gray-12 uppercase font-font-dm-sans">BEST DEALS OF THE WEEK
         </p>
@@ -55,7 +70,8 @@ function BestDealIndex() {
         </div>
         <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5 md:mt-0">
-                <div>
+            {products?.map((product) => (
+                <div key={product.id}>
                     <div className="border rev-img rounded-md relative">
                         <div className="h-48 flex justify-center items-center">
                             <div className="absolute left-2.5 top-2.5">
@@ -67,8 +83,7 @@ function BestDealIndex() {
                                 </p>
                             </div>
                             <img className="w-full h-full object-cover rounded-md"
-                                src="https://demo.martvill.techvill.net/public/uploads/sizes/medium/20221123/8455776f6791cd5479bb9a88c829876c.png"
-                                alt="Image" />
+                                src={product.featured_image} alt={product.name} />
                         </div>
                         <div className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-xl text-white font-semibold">
                             <div className="absolute flex justify-center h-6 cursor-pointer top-15p right-15p">
@@ -125,7 +140,7 @@ function BestDealIndex() {
                     <div className="sm:text-center flex flex-col">
                         <a href="javascript:void(0)">
                             <p className="text-13 md:text-sm text-gray-12 md:mt-2 dm-regular line-clamp">
-                                One Seat Pillow Yellow Sufa
+                                {product.name}
                             </p>
                         </a>
                         <div className="item-rating order-first md:order-none md:mt-0 mt-2">
@@ -178,19 +193,20 @@ function BestDealIndex() {
                                     </li>
 
                                     <li className="mt-0.5 text-gray-10 text-xss font-dm-sans ">
-                                        (2 Reviews)
+                                        ( {product.review_count} Reviews )
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <p className="text-[13px] md:text-sm text-gray-12 font-dm-sans">
-                            $400
+                            {product.regular_price_formatted}
                         </p>
-                        <p className="md:mt-0 text-[11px] font-medium line-through text-gray-10 pl-1 mt-0.5">
-                            $410
-                        </p>
+                        {/* <p className="md:mt-0 text-[11px] font-medium line-through text-gray-10 pl-1 mt-0.5">
+                            {product.regular_price}
+                        </p> */}
                     </div>
                 </div>
+            ))}
             </div>
         </div>
     </div>
