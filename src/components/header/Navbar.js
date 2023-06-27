@@ -1,11 +1,36 @@
+/* eslint-disable no-script-url */
 import React from 'react'
 import categoryIcon from '../../assets/svg/category.svg'
 import Phone from '../../assets/svg/phone.svg'
+import playstore from '../../assets/svg/playstore.svg'
+import apple from '../../assets/svg/apple.svg'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
-import Dropdown from '../common/Dropdown'
 import SliderSlice from '../../redux-box/slices/SliderSlice'
+import TeastDrop from '../common/CustomDropdown'
 function Navbar() {
+
+    const buttonContent = (
+        <div className='flex flex-row items-center'>
+          <img
+            className="flex rounded-none h-auto w-auto"
+            src={Phone}
+            alt="Phone"
+          />
+          <span className="text-[16px] text-[#2c2c2c] mt-1 leading-3 ml-2 font-dm-sans">
+                Download Our App
+          </span>
+        </div>
+      );
+    
+      const menuItems = [
+        { label: 'Google Play Store', href: 'javascript:void(0)', image: playstore },
+        { label: 'App Store', href: 'javascript:void(0)', image: apple },
+
+      ];
+
+
+
   return (
     <div>
         <div>
@@ -25,7 +50,7 @@ function Navbar() {
                         </div>
                         <div className='w-[78%] flex justify-between py-5'>
                             <MenuBar />
-                            <Dropdown dropImg={Phone} DropName="Download Our App" Share />
+                            <TeastDrop buttonContent={buttonContent} menuItems={menuItems} />
                         </div>
                     </div>
                 </div>
