@@ -13,7 +13,7 @@ function MenuBar() {
   
     useOnHoverOutside(dropdownRef, closeHoverMenu); // Call the hook
   return (
-    <div className='flex font-dm-sans gap-3'>
+    <div className='flex font-dm-sans gap-3 z-50'>
         <div className='border-r pr-2.5' ref={dropdownRef}>
             <button
             className="text-[16px] text-[#2c2c2c]"
