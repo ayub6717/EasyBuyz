@@ -7,6 +7,7 @@ import ElelctronicIndex from '../../pages/home/Electronics/ElelctronicIndex'
 import ProductBnrIndex from '../../pages/home/banner/ProductBnrIndex'
 import DigiproIndex from '../../pages/home/Digital-product/DigiproIndex'
 import BrandIndex from '../../pages/home/top-brand/BrandIndex'
+import FeaturesProduct from '../../pages/home/features-product/FeaturesProduct'
 
 function HomeLayout() {
   return (
@@ -15,6 +16,7 @@ function HomeLayout() {
         <BannerIndex />
         <TopCategory />
         <BestDealIndex /> 
+        <FeaturesProduct />
         <ElelctronicIndex />
         <ProductBnrIndex />
         <DigiproIndex />
