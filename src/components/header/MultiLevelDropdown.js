@@ -19,7 +19,7 @@ function MultiLevelDropdown() {
         <div>
             <ul className="bg-white border rounded-sm relative h-[490px]">
             {!isLoading && !isError && displayedCategory.length && displayedCategory.map((item) => (
-                <li key={category.id} className="rounded-sm px-3 py-[11.7px] hover:bg-gray-100 border-b">
+                <li key={item.id} className="rounded-sm px-3 py-[11.7px] hover:bg-gray-100 border-b">
                     <button
                         className="w-full text-left flex items-center outline-none focus:outline-none"
                     >
@@ -48,8 +48,8 @@ function MultiLevelDropdown() {
                                  origin-top-left h-full w-[270px] z-50"
                     >
 
-                    {!isLoading && !isError && displayedSubCategory.length && displayedSubCategory.map((item) => (
-                        <li key={category.id} className="rounded-sm px-3 py-[11.7px] hover:bg-gray-100 border-b">
+                    {!isLoading && !isError && displayedSubCategory && displayedSubCategory.length > 0 && displayedSubCategory.map((item) => (
+                        <li key={item.id} className="rounded-sm px-3 py-[11.7px] hover:bg-gray-100 border-b">
                             <button
                                 className="w-full text-left flex items-center outline-none focus:outline-none"
                             >

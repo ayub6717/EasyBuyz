@@ -21,8 +21,8 @@ function TopCategory() {
                 {isError && <div>Error loading top categories</div>}
                 <div className="grid grid-flow-col gap-7 auto-cols-max overflow-auto scrollbar-w-2">
                     {!isLoading && !isError && displayedCategory.length && displayedCategory.map((item) => (
-                        <a href={"javascript:void(0)"}>
-                            <div key={category.id} className="border hover:bg-[#fcca19] mb-4 md:mb-0 rounded-md relative t-img trans-effect w-[130px] 2xl:w-[140px]">
+                        <button key={item.id}>
+                            <div className="border hover:bg-[#fcca19] mb-4 md:mb-0 rounded-md relative t-img trans-effect w-[130px] 2xl:w-[140px]">
                                 <div className="flex justify-center items-center h-[130px]">
                                     <img className="md:h-16 md:w-16 w-66p h-66p object-contain trans-effect" src={item.picture_url} alt={item.name} />
                                 </div>
@@ -32,7 +32,7 @@ function TopCategory() {
                                     </p>
                                 </div>
                             </div>
-                        </a>
+                        </button>
                     ))}
                 </div>
             </section>

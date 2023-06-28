@@ -80,11 +80,11 @@ function BestDealIndex() {
                                     </div>
                                     <div className="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-xl text-white font-semibold">
                                         <div className="absolute flex justify-center h-6 cursor-pointer top-15p right-15p">
-                                            <a href="javascript:void(0)" className="relative block w-fill">
-                                            </a>
+                                            <button className="relative block w-fill">
+                                            </button>
                                             <div slot="icon" className="relative left-2">
-                                                <a href="javascript:void(0)" className="relative block w-fill"></a>
-                                                <a href="javascript:void(0)" className="add-to-cart">
+                                                <button className="relative block w-fill"></button>
+                                                <button className="add-to-cart">
                                                     <div className="h-6 w-6 p-1 mb-2 text-gray-12 hover:bg-[#fcca19] border border-gray-2 rounded-full bg-white">
                                                         <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path fillRule="evenodd" clipRule="evenodd"
@@ -97,7 +97,7 @@ function BestDealIndex() {
                                                             </path>
                                                         </svg>
                                                     </div>
-                                                </a>
+                                                </button>
 
                                                 <div className="wishlist h-6 w-6 p-1 mb-2 text-gray-12 relative hover:bg-[#fcca19] border border-gray-2 rounded-full bg-white add-wishlist">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -131,11 +131,11 @@ function BestDealIndex() {
                                     </div>
                                 </div>
                                 <div className="sm:text-center flex flex-col">
-                                    <a href="javascript:void(0)">
+                                    <button>
                                         <p className="text-13 md:text-sm text-gray-12 md:mt-2 dm-regular line-clamp">
                                             {product.name}
                                         </p>
-                                    </a>
+                                    </button>
                                     <div className="item-rating order-first md:order-none md:mt-0 mt-2">
                                         <div className="self-top">
                                             <ul className="flex sm:justify-center -space-x-1">
