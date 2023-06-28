@@ -11,28 +11,28 @@ import adminIcon from '../../assets/svg/adminIcon.svg'
 import logout from '../../assets/svg/logout.svg'
 import TopHeadBtn from '../common/TopHeadBtn'
 import CustomDropdown from '../common/CustomDropdown'
+import Modal from '../common/Modal'
 function Header() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const buttonContent = (
-        <div>
-            {isLoggedIn ? (
-                <div className='flex flex-col justify-center items-center'>
-                    <img
-                        className="bg-gray-100 items-center h-7 w-7 rounded-full dark:text-gray-2 hover:text-purple-500 cursor-pointer"
-                        src={dropImg}
-                        alt="dropImg"
-                    />
-                    <span className="text-[10px] text-[#898989] font-medium font-dm-sans mt-2 leading-3">
-                        Agatha Wilium
-                    </span>
-                </div>
-            ) : (
-                // User is not logged in, render the login button
-                <div onClick={() => setIsLoggedIn(true)}>
-                    <TopHeadBtn img={user} name="Account" cartList />
-                </div>
+    const [showModal, setShowModal] = useState(false);
 
-            )}
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
+    const buttonContent = (
+        <div className='flex flex-col justify-center items-center'>
+            <img
+                className="bg-gray-100 items-center h-7 w-7 rounded-full dark:text-gray-2 hover:text-purple-500 cursor-pointer"
+                src={dropImg}
+                alt="dropImg"
+            />
+            <span className="text-[10px] text-[#898989] font-medium font-dm-sans mt-2 leading-3">
+                Agatha Wilium
+            </span>
         </div>
     );
 
@@ -48,6 +48,16 @@ function Header() {
     return (
         <>
             <div className='border-b border-[#dfdfdf]'>
+                <Modal
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    title="Modal Title"
+                    onClose={handleCloseModal}
+                    buttonLabel="Open regular modal"
+                >
+                    Hi there will be content
+
+                </Modal>
                 <div className='py-4 mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
                     <div className='flex'>
                         <div className='w-[25%]'>
@@ -58,6 +68,9 @@ function Header() {
                         </div>
                         <div className='flex items-center justify-end w-[30%]'>
                             <CustomDropdown buttonContent={buttonContent} menuItems={menuItems} />
+                            <div onClick={handleOpenModal}>
+                                <TopHeadBtn img={user} name="Account" cartList />
+                            </div>
                             <TopHeadBtn img={wishlist} name="Wishlist" cartList />
                             <TopHeadBtn img={cart} name="Your Cart" cartList />
                             <TopHeadBtn img={trackOrder} name="Track order" cartList />
