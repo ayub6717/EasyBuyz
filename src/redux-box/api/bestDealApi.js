@@ -1,6 +1,6 @@
 import { baseApi } from "../../utils/base";
 
-export const productApi = baseApi.injectEndpoints({
+export const bestDealApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({
 		getProduct: build.query({
 			query: () => `user/product-categorized/popularProducts`,
@@ -9,5 +9,5 @@ export const productApi = baseApi.injectEndpoints({
     overrideExisting: false,
 });
 
-export const { useGetProductQuery } = productApi;
+export const { useGetProductQuery } = bestDealApi;
 

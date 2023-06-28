@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useGetProductQuery } from '../../../redux-box/api/productApi';
+import { useGetProductQuery } from '../../../redux-box/api/featuredApi';
 
 function BestDealTest() {
   const [products, setProducts] = useState([]);
