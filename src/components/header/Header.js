@@ -28,12 +28,10 @@ function Header() {
                 </div>
             ) : (
                 // User is not logged in, render the login button
-                <div>
-                    <button onClick={() => setIsLoggedIn(true)}>
-                        <TopHeadBtn img={user} name="Account" cartList />
-                    </button>
-
+                <div onClick={() => setIsLoggedIn(true)}>
+                    <TopHeadBtn img={user} name="Account" cartList />
                 </div>
+
             )}
         </div>
     );

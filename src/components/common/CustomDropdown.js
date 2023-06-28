@@ -1,4 +1,3 @@
-/* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -12,7 +11,7 @@ export default function CustomDropdown({ buttonContent, menuItems }) {
         <Menu as="div" className="relative inline-block text-left float-right">
             <div>
                 <Menu.Button className="flex flex-col justify-center items-center">
-                    {buttonContent}
+                    <div>{buttonContent}</div>
                 </Menu.Button>
             </div>
 
@@ -31,7 +30,7 @@ export default function CustomDropdown({ buttonContent, menuItems }) {
                             <Menu.Item key={item.label}>
                                 {({ active }) => (
                                     <a
-                                        href={item.href}
+                                        to={item.href}
                                         className={classNames(
                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                             'block px-4 py-2 text-sm'
