@@ -7,7 +7,7 @@ import apple from '../../assets/svg/apple.svg'
 import MenuBar from './MenuBar'
 import MultiLevelDropdown from './MultiLevelDropdown'
 import SliderSlice from '../../redux-box/slices/SliderSlice'
-import TeastDrop from '../common/CustomDropdown'
+import CustomDropdown from '../common/CustomDropdown'
 function Navbar() {
 
     const buttonContent = (
@@ -50,7 +50,7 @@ function Navbar() {
                         </div>
                         <div className='w-[78%] flex justify-between py-5'>
                             <MenuBar />
-                            <TeastDrop buttonContent={buttonContent} menuItems={menuItems} />
+                            <CustomDropdown buttonContent={buttonContent} menuItems={menuItems} />
                         </div>
                     </div>
                 </div>

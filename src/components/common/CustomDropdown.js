@@ -7,7 +7,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function TeastDrop({ buttonContent, menuItems }) {
+export default function CustomDropdown({ buttonContent, menuItems }) {
     return (
         <Menu as="div" className="relative inline-block text-left float-right">
             <div>
