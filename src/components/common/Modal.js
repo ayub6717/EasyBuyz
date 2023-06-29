@@ -30,7 +30,7 @@ export default function Modal({ showModal, setShowModal, title, children, onClos
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-[60] outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-3xl" ref={modalRef}>
-              <div className="w-96 h-96 border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
+              <div className="w-[550px] h-96 border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none">
               <button
                     className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={handleCloseModal}
