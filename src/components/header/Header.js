@@ -12,6 +12,9 @@ import logout from '../../assets/svg/logout.svg'
 import TopHeadBtn from '../common/TopHeadBtn'
 import CustomDropdown from '../common/CustomDropdown'
 import Modal from '../common/Modal'
+import Tab from '../common/Tab'
+import Login from '../../pages/Auth/Login'
+import SignUp from '../../pages/Auth/SignUp'
 function Header() {
     const [showModal, setShowModal] = useState(false);
 
@@ -55,7 +58,10 @@ function Header() {
                     onClose={handleCloseModal}
                     buttonLabel="Open regular modal"
                 >
-                    Hi there will be content
+                    <Tab tabs={['Sign In', 'Sign Up',]}>
+                        <Login />
+                        <SignUp />
+                    </Tab>
 
                 </Modal>
                 <div className='py-4 mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>

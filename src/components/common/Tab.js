@@ -28,20 +28,22 @@ const Tab = ({ tabs, children }) => {
   };
 
   return (
-    <div className="border rounded-md">
-      <div className="flex relative">
+    <div className="rounded-md font-dm-sans">
+      <div className="flex relative border-b border-b-[#dfdfdf]">
         {tabs.map((tab, index) => (
           <button
             key={tab}
             ref={(element) => (tabsRef.current[index] = element)}
-            className={`flex-1 px-4 py-2 focus:outline-none`}
+            className={`flex-1 pb-2 focus:outline-none font-bold text-[18px] ${
+              activeTabIndex === index ? 'text-[#2c2c2c]' : 'text-[#898989]'
+            }`}
             onClick={() => handleTabClick(index)}
           >
             {tab}
           </button>
         ))}
         <span
-          className="absolute bottom-0 h-1 transition-all ease-in-out duration-300 bg-blue-500"
+          className="absolute bottom-0 h-[3px] transition-all ease-in-out duration-300 bg-yellow-500"
           style={{
             width: `${tabUnderlineWidth}px`,
             transform: `translateX(${tabUnderlineLeft}px)`,
