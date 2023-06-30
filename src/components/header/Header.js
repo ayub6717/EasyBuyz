@@ -59,7 +59,7 @@ function Header() {
                     buttonLabel="Open regular modal"
                 >
                     <Tab tabs={['Sign In', 'Sign Up',]}>
-                        <Login />
+                        <Login handleCloseModal={handleCloseModal} />
                         <SignUp />
                     </Tab>
 
