@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import Modal from '../../components/common/Modal';
+import ForgetPassword from './ForgetPassword';
 
-function Login() {
+function Login({handleCloseModal}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
+    const [showForgetPasswordModal, setShowForgetPasswordModal] = useState(false);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -15,6 +19,19 @@ function Login() {
 
     const togglePasswordVisibility = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
+    };
+
+    const handleRememberMeChange = (event) => {
+        setRememberMe(event.target.checked);
+    };
+
+    const handleOpenForgetPasswordModal = () => {
+        setShowForgetPasswordModal(true);
+    };
+
+    const handleCloseForgetPasswordModal = () => {
+        setShowForgetPasswordModal(false);
+        handleCloseModal(); // Close the previous modal in Header.js
     };
 
     return (
@@ -64,19 +81,9 @@ function Login() {
                     className="absolute border-gray-2 top-2 h-26p md:top-3 md:h-30p border-r md:left-3 left-2 pl-1.5 pr-3 cursor-pointer"
 
                 >
-                    <svg
-                        className="mt-1.5 w-4 h-4 md:w-5 md:h-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="19"
-                        viewBox="0 0 18 19"
-                        fill="none"
-                    >
-                        <path
-                            d="M16.3449 17.4054C16.8977 17.2902 17.2269 16.7117 16.9522 16.2183C16.3466 15.1307 15.3926 14.1749 14.1722 13.4465C12.6004 12.5085 10.6745 12 8.69333 12C6.71213 12 4.78628 12.5085 3.21448 13.4465C1.99405 14.1749 1.04002 15.1307 0.434441 16.2183C0.159743 16.7117 0.488979 17.2902 1.04179 17.4054C6.0886 18.4572 11.2981 18.4572 16.3449 17.4054Z"
-                            fill="#898989"
-                        ></path>
-                        <circle cx="8.69336" cy="5" r="5" fill="#898989"></circle>
+                    <svg className="mt-1 w-4 h-4 md:w-5 md:h-5" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M4 5C4 2.23858 6.23858 0 9 0C11.7614 0 14 2.23858 14 5V6C14 6.55228 13.5523 7 13 7C12.4477 7 12 6.55228 12 6V5C12 3.34315 10.6569 2 9 2C7.34315 2 6 3.34315 6 5V6C6 6.55228 5.55228 7 5 7C4.44772 7 4 6.55228 4 6V5Z" fill="#898989"></path>
+                        <path fillRule="evenodd" clipRule="evenodd" d="M0.87868 5.87868C0 6.75736 0 8.17157 0 11V12C0 15.7712 0 17.6569 1.17157 18.8284C2.34315 20 4.22876 20 8 20H10C13.7712 20 15.6569 20 16.8284 18.8284C18 17.6569 18 15.7712 18 12V11C18 8.17157 18 6.75736 17.1213 5.87868C16.2426 5 14.8284 5 12 5H6C3.17157 5 1.75736 5 0.87868 5.87868ZM9 13C9.55228 13 10 12.5523 10 12C10 11.4477 9.55228 11 9 11C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13ZM12 12C12 13.3062 11.1652 14.4175 10 14.8293V17H8V14.8293C6.83481 14.4175 6 13.3062 6 12C6 10.3431 7.34315 9 9 9C10.6569 9 12 10.3431 12 12Z" fill="#898989"></path>
                     </svg>
                 </span>
                 <span
@@ -96,6 +103,45 @@ function Login() {
                         </svg>
                     )}
                 </span>
+            </div>
+
+            <div>
+                <div className="md:mb-4 md:mt-4 flex justify-between">
+                    <div className="form-check">
+                        <input
+                            id="flexCheckDefault"
+                            className="form-check-input md:-mt-0.5 mr-1 h-3 w-3 md:h-3.5 md:w-3.5 border text-gray-12 border-gray-10 form-checkbox cursor-pointer"
+                            type="checkbox"
+                            name="remember_me"
+                            checked={rememberMe}
+                            onChange={handleRememberMeChange}
+                        />
+                        <label
+                            className="form-check-label roboto-medium font-medium text-gray-10 hover:text-gray-12 cursor-pointer text-11 md:text-sm"
+                            htmlFor="flexCheckDefault"
+                        >
+                            Remember Me
+                        </label>
+                    </div>
+                    <div>
+                        <span
+                            className="forgot-pass roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm cursor-pointer"
+                            onClick={handleOpenForgetPasswordModal}
+                        >
+                            Forgot password?
+                        </span>
+                    </div>
+                </div>
+
+                <Modal
+                    showModal={showForgetPasswordModal}
+                    setShowModal={setShowForgetPasswordModal}
+                    title="Forgot Password"
+                    onClose={handleCloseForgetPasswordModal}
+                
+                >
+                    <ForgetPassword />
+                </Modal>
             </div>
         </div>
     );
