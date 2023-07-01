@@ -36,7 +36,7 @@ const ExModal = ({ contentKey, children }) => {
           <div className="fixed inset-0 bg-black opacity-75"></div>
           <div className="bg-white rounded-lg p-6 w-auto relative" ref={modalRef}>
             <button
-              className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+              className="absolute top-[-8px] right-[-2px] p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
               onClick={closeModalHandler}
             >
               <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">×</span>
