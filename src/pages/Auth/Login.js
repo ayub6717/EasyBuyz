@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Modal from '../../components/common/Modal';
-import ForgetPassword from './ForgetPassword';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux-box/actions/modalAct';
 
-function Login({handleCloseModal}) {
+function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
-    const [showForgetPasswordModal, setShowForgetPasswordModal] = useState(false);
+
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -21,17 +21,22 @@ function Login({handleCloseModal}) {
         setShowPassword((prevShowPassword) => !prevShowPassword);
     };
 
+    // Handle checkbox change
     const handleRememberMeChange = (event) => {
         setRememberMe(event.target.checked);
     };
 
-    const handleOpenForgetPasswordModal = () => {
-        setShowForgetPasswordModal(true);
+    // Modal component pass
+    const dispatch = useDispatch();
+    const openModalHandler = () => {
+        dispatch(openModal('F_INDEX')); // Pass the same identifier used in the Login component
+    };
+    const openModalHandler1 = () => {
+        dispatch(openModal('PRODUCT_BANNER_INDEX')); // Pass a unique identifier for the content
     };
 
-    const handleCloseForgetPasswordModal = () => {
-        setShowForgetPasswordModal(false);
-        handleCloseModal(); // Close the previous modal in Header.js
+    const openModalHandler2 = () => {
+        dispatch(openModal('FEATURES_PRODUCT')); // Pass a unique identifier for the content
     };
 
     return (
@@ -124,24 +129,23 @@ function Login({handleCloseModal}) {
                         </label>
                     </div>
                     <div>
-                        <span
-                            className="forgot-pass roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm cursor-pointer"
-                            onClick={handleOpenForgetPasswordModal}
+                        <span className="forgot-pass roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm cursor-pointer"
+                            onClick={openModalHandler}
                         >
                             Forgot password?
                         </span>
+                        <span className="forgot-pass roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm cursor-pointer"
+                            onClick={openModalHandler1}
+                        >
+                            Banner?
+                        </span>
+                        <span className="forgot-pass roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm cursor-pointer"
+                            onClick={openModalHandler2}
+                        >
+                            Featured?
+                        </span>
                     </div>
                 </div>
-
-                <Modal
-                    showModal={showForgetPasswordModal}
-                    setShowModal={setShowForgetPasswordModal}
-                    title="Forgot Password"
-                    onClose={handleCloseForgetPasswordModal}
-                
-                >
-                    <ForgetPassword />
-                </Modal>
             </div>
         </div>
     );

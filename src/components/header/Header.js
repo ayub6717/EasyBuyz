@@ -1,5 +1,5 @@
 /* eslint-disable no-script-url */
-import { useState } from 'react'
+import React from 'react'
 import Logo from '../../assets/images/logos/logo.png'
 import SearchField from '../common/SearchField'
 import dropImg from '../../assets/images/profile/user.png'
@@ -11,20 +11,19 @@ import adminIcon from '../../assets/svg/adminIcon.svg'
 import logout from '../../assets/svg/logout.svg'
 import TopHeadBtn from '../common/TopHeadBtn'
 import CustomDropdown from '../common/CustomDropdown'
-import Modal from '../common/Modal'
 import Tab from '../common/Tab'
 import Login from '../../pages/Auth/Login'
 import SignUp from '../../pages/Auth/SignUp'
-function Header() {
-    const [showModal, setShowModal] = useState(false);
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux-box/actions/modalAct';
+import ExModal from '../common/ExModal'
+function Header() { 
+    const dispatch = useDispatch();
 
-    const handleOpenModal = () => {
-        setShowModal(true);
+    const openModalHandler1 = () => {
+      dispatch(openModal('TAB_INDEX')); // Pass a unique identifier for the content
     };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-    };
+  
 
     const buttonContent = (
         <div className='flex flex-col justify-center items-center'>
@@ -51,7 +50,7 @@ function Header() {
     return (
         <>
             <div className='border-b border-[#dfdfdf]'>
-                <Modal
+                {/* <Modal
                     showModal={showModal}
                     setShowModal={setShowModal}
                     title="Modal Title"
@@ -59,11 +58,18 @@ function Header() {
                     buttonLabel="Open regular modal"
                 >
                     <Tab tabs={['Sign In', 'Sign Up',]}>
-                        <Login handleCloseModal={handleCloseModal} />
+                        <Login handleCloseModal={handleCloseModal} handleOpenModal={handleOpenModal} />
                         <SignUp />
                     </Tab>
 
-                </Modal>
+                </Modal> */}
+
+                <ExModal contentKey="TAB_INDEX">
+                    <Tab tabs={['Sign In', 'Sign Up',]}>
+                        <Login />
+                        <SignUp />
+                    </Tab>
+                </ExModal>
                 <div className='py-4 mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92'>
                     <div className='flex'>
                         <div className='w-[25%]'>
@@ -74,7 +80,7 @@ function Header() {
                         </div>
                         <div className='flex items-center justify-end w-[30%]'>
                             <CustomDropdown buttonContent={buttonContent} menuItems={menuItems} />
-                            <div onClick={handleOpenModal}>
+                            <div onClick={openModalHandler1}>
                                 <TopHeadBtn img={user} name="Account" cartList />
                             </div>
                             <TopHeadBtn img={wishlist} name="Wishlist" cartList />
