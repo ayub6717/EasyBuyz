@@ -1,24 +1,23 @@
-// modalReducer.js
 const initialState = {
-    showModal: false,
-  };
-  
-  const modalReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'OPEN_MODAL':
-        return {
-          ...state,
-          showModal: true,
-        };
-      case 'CLOSE_MODAL':
-        return {
-          ...state,
-          showModal: false,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default modalReducer;
-  
+  isOpen: false,
+  content: null,
+};
+
+const modalRed = (state = initialState, action) => {
+  switch (action.type) {
+    case 'OPEN_MODAL':
+      return {
+        isOpen: true,
+        content: action.payload,
+      };
+    case 'CLOSE_MODAL':
+      return {
+        isOpen: false,
+        content: null,
+      };
+    default:
+      return state;
+  }
+};
+
+export default modalRed;

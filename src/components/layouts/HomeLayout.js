@@ -8,12 +8,12 @@ import ProductBnrIndex from '../../pages/home/banner/ProductBnrIndex'
 import DigiproIndex from '../../pages/home/Digital-product/DigiproIndex'
 import BrandIndex from '../../pages/home/top-brand/BrandIndex'
 import FeaturesProduct from '../../pages/home/features-product/FeaturesProduct'
-import Sig from '../../pages/test/Sign'
+import ModalList from '../modals/ModalList'
 
 function HomeLayout() {
   return (
     <div>
-        <Sig />
+        <ModalList />
         <HeaderIndex />
         <BannerIndex />
         <TopCategory />

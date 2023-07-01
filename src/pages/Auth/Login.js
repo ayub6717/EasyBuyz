@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../redux-box/actions/modalAct';
+import { openModal } from '../../redux-box/actions/modalActions';
 
 function Login() {
     const [email, setEmail] = useState('');

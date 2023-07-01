@@ -15,8 +15,8 @@ import Tab from '../common/Tab'
 import Login from '../../pages/Auth/Login'
 import SignUp from '../../pages/Auth/SignUp'
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../redux-box/actions/modalAct';
-import ExModal from '../common/ExModal'
+import { openModal } from '../../redux-box/actions/modalActions';
+import ExModal from '../common/CustomModal'
 function Header() { 
     const dispatch = useDispatch();
 

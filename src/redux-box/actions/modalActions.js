@@ -1,9 +1,8 @@
-// modalActions.js
-export const openModal = () => ({
-    type: 'OPEN_MODAL',
-  });
-  
-  export const closeModal = () => ({
-    type: 'CLOSE_MODAL',
-  });
-  
+export const openModal = (contentKey) => ({
+  type: 'OPEN_MODAL',
+  payload: contentKey,
+});
+
+export const closeModal = () => ({
+  type: 'CLOSE_MODAL',
+});
