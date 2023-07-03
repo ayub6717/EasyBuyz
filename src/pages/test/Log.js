@@ -1,19 +1,54 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { openModal } from '../../redux-box/actions/modalAct';
-const Log = () => {
-  const dispatch = useDispatch();
+import React, { useState } from 'react';
+import { useLoginMutation } from '../../redux-box/api/userLoginApi';
+import UserProfile from './UserProfile';
 
-  const openModalHandler = () => {
-    dispatch(openModal()); // Pass the Signup component as the content
+const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await login({ email, password });
+      // Store the access token in local storage
+      localStorage.setItem('accessToken', data.access_token);
+      setLoggedIn(true);
+      setUser(data.response.records.user);
+      console.log('Login successful');
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
   };
 
   return (
     <div>
-      <h1>Login</h1>
-      <button onClick={openModalHandler}>Open Signup</button>
+      {!loggedIn ? (
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
+      ) : (
+        <UserProfile user={user} />
+      )}
     </div>
   );
 };
 
-export default Log;
+export default LoginForm;
