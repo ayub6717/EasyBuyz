@@ -133,7 +133,7 @@ function Login() {
                 </div>
             </div>
 
-            <Button text="Sign In" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
+            <Button text="Sign In" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
             <div className="md:mt-18p text-lg flex items-center">
                 <hr className="border border-gray-2 w-full" />
                 <p className="font-dm-sans text-gray-10 text-center text-sm md:text-base px-3 md:px-5 leading-5 whitespace-nowrap">
@@ -143,9 +143,9 @@ function Login() {
             </div>
 
             <div className="flex gap-2.5 justify-center md:justify-between md:my-5 my-4">
-                <Button text="Admin" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
-                <Button text="Customer" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
-                <Button text="Vendor" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
+                <Button text="Admin" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
+                <Button text="Customer" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
+                <Button text="Vendor" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
             </div>
             <div className="md:mt-18p text-lg flex items-center">
                 <hr className="border border-gray-2 w-full" />
@@ -156,8 +156,8 @@ function Login() {
             </div>
 
             <div className="flex gap-2.5 justify-center md:justify-between md:my-5 my-4">
-                <Button icon={google} text="Google" color="#C8191C" textColor="white" width="w-full" hoverColor="#F81B4D" />
-                <Button icon={facebook} text="Facebook" color="#115B98" textColor="white" width="w-full" hoverColor="#4E6297" />
+                <Button icon={google} text="Google" color="reds-3" textColor="white" width="w-full" hoverColor="reds-5" />
+                <Button icon={facebook} text="Facebook" color="blues-1" textColor="white" width="w-full" hoverColor="blues-3" />
             </div>
 
 

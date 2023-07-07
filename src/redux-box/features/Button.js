@@ -9,7 +9,7 @@ const Button = ({
   icon,
   hoverColor,
 }) => {
-  const buttonClasses = `flex items-center justify-center bg-[${color}] hover:bg-[${hoverColor}] text-${textColor} font-bold py-2 px-4 rounded ${width}`;
+  const buttonClasses = `flex items-center justify-center bg-${color} hover:bg-${hoverColor} text-${textColor} font-bold py-2 px-4 rounded ${width}`;
 
   return (
     <button className={buttonClasses}>

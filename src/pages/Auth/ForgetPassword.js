@@ -53,7 +53,7 @@ function ForgetPassword() {
                 <span className="signin-message"></span>
             </div>
 
-            <Button text="SEND" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
+            <Button text="SEND" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
 
             <p className="text-center mt-5 text-sm md:text-base text-gray-10 roboto-medium font-medium">
                 Back to <span onClick={openModalHandler1} className="text-gray-12 cursor-pointer back-signIn">Sign in</span>

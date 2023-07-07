@@ -142,7 +142,7 @@ function SignUp() {
       </label>
 
       <div className="mt-4">
-        <Button text="CREATE ACCOUNT" color="#2c2c2c" textColor="white" width="w-full" hoverColor="#fcca19" />
+        <Button text="CREATE ACCOUNT" color="gray-12" textColor="white" width="w-full" hoverColor="yellow-1" />
       </div>
 
 
@@ -155,8 +155,8 @@ function SignUp() {
       </div>
 
       <div className="flex gap-2.5 justify-center md:justify-between md:my-5 my-4">
-        <Button icon={google} text="Google" color="#C8191C" textColor="white" width="w-full" hoverColor="#F81B4D" />
-        <Button icon={facebook} text="Facebook" color="#115B98" textColor="white" width="w-full" hoverColor="#4E6297" />
+        <Button icon={google} text="Google" color="reds-3" textColor="white" width="w-full" hoverColor="reds-5" />
+        <Button icon={facebook} text="Facebook" color="blues-1" textColor="white" width="w-full" hoverColor="blues-3" />
       </div>
     </div>
   );
