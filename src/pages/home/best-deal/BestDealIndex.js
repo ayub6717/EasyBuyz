@@ -10,12 +10,18 @@ import "swiper/css/navigation";
 import slideOne from "../../../assets/images/slider/sideImg.png"
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { useGetProductQuery } from '../../../redux-box/api/bestDealApi';
-
+import { openModal } from '../../../redux-box/actions/modalActions';
+import { useDispatch } from 'react-redux';
+import CustomModal from '../../../components/common/CustomModal';
+import QuickCard from '../../../features/components/QuickCard';
 
 function BestDealIndex() {
     const { data, isLoading, isError } = useGetProductQuery();
     const products = data?.response?.records?.data?.slice(0, 3).concat(data?.response?.records?.data?.slice(5, 10));
-
+    const dispatch = useDispatch();
+    const openProudctView = () => {
+        dispatch(openModal('Product_Modal')); // Pass a unique identifier for the content
+      };
 
     const slideImg = [
         {
@@ -123,7 +129,7 @@ function BestDealIndex() {
                                             </div>
 
                                         </div>
-                                        <button className="open-view-modal" >
+                                        <button className="open-view-modal" onClick={openProudctView} >
                                             <p className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
                                                 Quick View
                                             </p>
@@ -203,6 +209,9 @@ function BestDealIndex() {
                     </div>
                 </div>
             </div>
+            <CustomModal contentKey="Product_Modal">
+                <QuickCard />
+            </CustomModal>
         </section>
     )
 }

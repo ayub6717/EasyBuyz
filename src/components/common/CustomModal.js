@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeModal } from '../../redux-box/actions/modalActions';
 
-const ExModal = ({ contentKey, children }) => {
+const CustomModal = ({ contentKey, children }) => {
   const { isOpen, content } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
   const modalRef = useRef(null);
@@ -49,4 +49,4 @@ const ExModal = ({ contentKey, children }) => {
   );
 };
 
-export default ExModal;
+export default CustomModal;
