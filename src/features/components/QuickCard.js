@@ -1,34 +1,58 @@
 /* eslint-disable no-script-url */
 import React from "react";
+import SelectField from "../../components/common/SelectField";
 
-function QuickCard() {
+function QuickCard({ product }) {
+  const colorOptions =
+    product.attribute_values?.color?.map((color) => ({
+      value: color.value,
+      label: color.value,
+    })) || [];
+
+  const storageOptions =
+    product.attribute_values?.storage?.map((storage) => ({
+      value: storage.value,
+      label: storage.value,
+    })) || [];
+
+  const sizeOptions =
+    product.attributes?.size?.value?.map((size) => ({
+      value: size,
+      label: size,
+    })) || [];
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 item-view-content w-[860px]">
-      <div className="w-full width-93-percentage xxs:w-72% xxs:transform xxs:translate-x-19%"></div>
+      <div className="w-full width-93-percentage xxs:w-72% xxs:transform xxs:translate-x-19%">
+        <img
+          src={product.featured_image}
+          alt={product.name}
+          className="w-full object-cover"
+        />
+      </div>
 
-      <div className="md:-ml-2 relative">
+      <div className="relative ml-8">
         <div>
           <div className="flex flex-wrap mt-3 mt-md-0">
             <div className="flex-initial px-2 text-gray-10 bg-gray-11 mb-2 rounded-sm mr-2">
               <p className="roboto-medium font-medium text-xs py-1">
-                Category: Woman Fashion
+                Category: {product.categories.join(", ")}
               </p>
             </div>
             <div className="flex-initial px-2 text-gray-10 bg-gray-11 mb-2 rounded-sm mr-2">
               <p className="roboto-medium font-medium text-xs py-1">
-                Brand: Sailor
+                Brand: {product.brand}
               </p>
             </div>
             <div className="flex-initial px-2 text-gray-10 bg-gray-11 mb-2 rounded-sm mr-2">
               <p className="roboto-medium font-medium text-xs py-1">
-                SKU: MV0158
+                SKU: {product.sku}
               </p>
             </div>
           </div>
           <div className="mt-3">
             <h2 className="text-gray-12 dm-bold font-bold text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-22 -mt-1">
-              Women Chiffon Solid Pure Basic Soft Red Blouses Tops Summer Top
-              Casual Loose Short Sleeve
+              {product.name}
             </h2>
           </div>
           <div className="flex md:flex-col flex-wrap lg:flex-row justify-start items-center md:items-start lg:justify-start lg:items-center gap-x-4 md:gap-x-0 lg:gap-x-4 md:mt-3 mt-3">
@@ -143,111 +167,77 @@ function QuickCard() {
           </div>
 
           <div className="flex">
-            <span className="text-2.5xl dm-bold text-gray-12">$45 - $45</span>
-          </div>
-          <div className="flex">
-            <p className="dm-bold">
-              <span className="text-xl md:text-2.5xl text-gray-12 display-none">
-                4
+            {product.type === "Variable Product" ? (
+              <span className="text-2.5xl text-gray-12">
+                {product.regular_price_formatted}
               </span>
-            </p>
+            ) : (
+              <p className="dm-bold">
+                {product.sale_price_formatted ? (
+                  <>
+                    <span className="text-2.5xl text-gray-12">
+                      {product.sale_price_formatted}
+                    </span>
+                    <span className="text-lg line-through text-gray-10 pl-1 mt-0.5">
+                      {product.regular_price_formatted}
+                    </span>
+                  </>
+                ) : (
+                  <span className="text-2.5xl text-gray-12">
+                    {product.regular_price_formatted}
+                  </span>
+                )}
+              </p>
+            )}
           </div>
           <div>
-            <div className="flex mt-18p option-select items-center">
-              <h4 className="text-gray-12 text-sm font-medium roboto-medium mr-2 w-1/5">
-                Color
-              </h4>
-              <select className="option_priceV outline-none rounded border border-gray-2 z-0 block whitespace-no-wrap select2 text-gray-10 text-sm font-medium roboto-medium bg-white w-36 item-variationsV cursor-pointer">
-                <option className="border-none" data-position="1" value="">
-                  Select One
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="Bone"
-                  data-id="192"
-                  data-position="1"
-                >
-                  Bone
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="White"
-                  data-id="211"
-                  data-position="1"
-                >
-                  White
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="Pale Blue Lily"
-                  data-id="222"
-                  data-position="1"
-                >
-                  Pale Blue Lily
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="Sea Mist"
-                  data-id="223"
-                  data-position="1"
-                >
-                  Sea Mist
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="Red-Orange"
-                  data-id="224"
-                  data-position="1"
-                >
-                  Red-Orange
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="Ecru White"
-                  data-id="225"
-                  data-position="1"
-                >
-                  Ecru White
-                </option>
-              </select>
+            <div>
+              {colorOptions.length > 0 && (
+                <div className="flex mt-18p option-select items-center">
+                  <h4 className="text-gray-12 text-sm font-medium roboto-medium mr-2 w-1/5">
+                    Color
+                  </h4>
+                  <div className="border rounded pr-1  w-36">
+                    <SelectField data={colorOptions} />
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="flex mt-18p option-select items-center">
-              <h4 className="text-gray-12 text-sm font-medium roboto-medium mr-2 w-1/5">
-                Size
-              </h4>
-              <select
-                name="option[]"
-                className="option_priceV outline-none rounded border border-gray-2 z-0 block whitespace-no-wrap select2 text-gray-10 text-sm font-medium roboto-medium bg-white w-36 item-variationsV cursor-pointer"
-              >
-                <option className="border-none" data-position="2" value="">
-                  Select One
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="M"
-                  data-id="M"
-                  data-position="2"
-                >
-                  M
-                </option>
-                <option
-                  className="border-none h-10"
-                  value="L"
-                  data-id="L"
-                  data-position="2"
-                >
-                  L
-                </option>
-              </select>
+
+            <div>
+              {storageOptions.length > 0 && (
+                <div className="flex mt-18p option-select items-center">
+                  <h4 className="text-gray-12 text-sm font-medium roboto-medium mr-2 w-1/5">
+                    Storage
+                  </h4>
+                  <div className="border rounded pr-1  w-36">
+                    <SelectField data={storageOptions} />
+                  </div>
+                </div>
+              )}
             </div>
-            <label className="error display-none">Not Available</label>
-            <div className="flex flex-col md:flex-row justify-between md:items-center mt-22p mb-5 md:mr-10">
+
+            <div>
+              {sizeOptions.length > 0 && (
+                <div className="flex mt-18p option-select items-center">
+                  <h4 className="text-gray-12 text-sm font-medium roboto-medium mr-2 w-1/5">
+                    Size
+                  </h4>
+                  <div className="border rounded pr-1  w-36">
+                    <SelectField data={sizeOptions} />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* <label className="error display-none">Not Available</label> */}
+            <div className="flex flex-col md:flex-row justify-between md:items-center mt-[32px] mb-5 md:mr-10">
               <div className="flex flex-col md:flex-row justify-start md:items-center">
                 <span className="text-gray-12 text-sm roboto-medium leading-4 font-medium display-none">
                   <span className="text-green-1 capitalize leading-4 bg-green-2 px-4 py-2 text-sm roboto-medium font-medium rounded mr-2.5 rtl-direction-space-left">
-                    In Stock
-                  </span>{" "}
-                  16 items remaining
+                    {product.stock_status}
+                  </span>
+                  {product.stock_quantity} items remaining
                 </span>
               </div>
               <div className="flex md:justify-between justify-start md:mt-0 mt-5 items-center display-none">
@@ -350,7 +340,7 @@ function QuickCard() {
           </div>
           <div className="mt-3 md:mt-0 w-full md:ml-4">
             <div className="add-to-cart cart-details-page">
-              <button className="primary-bg-color font-bold w-full lg:px-5 h-12 rounded flex justify-center items-center">
+              <button className="bg-[#fcca19] font-bold w-full lg:px-5 h-12 rounded flex justify-center items-center">
                 <svg
                   width="20"
                   height="19"

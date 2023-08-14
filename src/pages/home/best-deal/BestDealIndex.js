@@ -2,7 +2,7 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react'
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,10 +17,13 @@ import QuickCard from '../../../features/components/QuickCard';
 
 function BestDealIndex() {
     const { data, isLoading, isError } = useGetProductQuery();
-    const products = data?.response?.records?.data?.slice(0, 3).concat(data?.response?.records?.data?.slice(5, 10));
+    const products = data?.response?.records?.data?.slice(0, 8);
+    
     const dispatch = useDispatch();
-    const openProudctView = () => {
-        dispatch(openModal('Product_Modal')); // Pass a unique identifier for the content
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const openProductView = (product) => {
+        setSelectedProduct(product);
+        dispatch(openModal('Product_Modal'));
       };
 
     const slideImg = [
@@ -129,7 +132,7 @@ function BestDealIndex() {
                                             </div>
 
                                         </div>
-                                        <button className="open-view-modal" onClick={openProudctView} >
+                                        <button className="open-view-modal"  onClick={() => openProductView(product)} >
                                             <p className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
                                                 Quick View
                                             </p>
@@ -201,8 +204,8 @@ function BestDealIndex() {
                                         {product.regular_price_formatted}
                                     </p>
                                     {/* <p className="md:mt-0 text-[11px] font-medium line-through text-gray-10 pl-1 mt-0.5">
-                        {product.regular_price}
-                    </p> */}
+                                        {product.regular_price}
+                                    </p> */}
                                 </div>
                             </div>
                         ))}
@@ -210,7 +213,7 @@ function BestDealIndex() {
                 </div>
             </div>
             <CustomModal contentKey="Product_Modal">
-                <QuickCard />
+                {selectedProduct && <QuickCard product={selectedProduct} />}
             </CustomModal>
         </section>
     )

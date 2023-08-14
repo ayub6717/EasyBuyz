@@ -2,14 +2,25 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react'
+import { useState } from 'react';
 import ShopBtn from '../../../components/common/ShopBtn'
 import { useGetKeywordQuery } from '../../../redux-box/api/keywordApi';
+import { openModal } from '../../../redux-box/actions/modalActions';
+import { useDispatch } from 'react-redux';
+import CustomModal from '../../../components/common/CustomModal';
+import QuickCard from '../../../features/components/QuickCard';
 
 
 function ElelctronicIndex() {
     const { data, isLoading, isError } = useGetKeywordQuery('Electronic Accessories');
     const products = data?.response?.records?.data?.slice(0,8)
+
+    const dispatch = useDispatch();
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const openProductView = (product) => {
+        setSelectedProduct(product);
+        dispatch(openModal('Electronic_Modal'));
+      };
   return (
     <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12">
         <div className="flex md:justify-center justify-center items-center mb-2.5 md:mb-5">
@@ -83,7 +94,7 @@ function ElelctronicIndex() {
 
                     </div>
                     <button className="open-view-modal" >
-                      <p className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
+                      <p onClick={() => openProductView(product)} className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
                         Quick View
                       </p>
                     </button>
@@ -175,6 +186,9 @@ function ElelctronicIndex() {
                 </div>
             </div>
         </div>
+        <CustomModal contentKey="Electronic_Modal">
+                {selectedProduct && <QuickCard product={selectedProduct} />}
+        </CustomModal>
     </section>
   )
 }

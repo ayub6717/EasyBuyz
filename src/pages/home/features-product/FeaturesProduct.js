@@ -2,13 +2,23 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react'
+import { useState } from 'react';
 import { useGetFeaturedQuery } from '../../../redux-box/api/featuredApi';
-
+import { openModal } from '../../../redux-box/actions/modalActions';
+import { useDispatch } from 'react-redux';
+import CustomModal from '../../../components/common/CustomModal';
+import QuickCard from '../../../features/components/QuickCard';
 
 function FeaturesProduct() {
   const { data, isLoading, isError } = useGetFeaturedQuery();
-  const products = data?.response?.records?.data?.slice(0,10)
+  const products = data?.response?.records?.data
+
+  const dispatch = useDispatch();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const openProductView = (product) => {
+      setSelectedProduct(product);
+      dispatch(openModal('Featured_Modal'));
+    };
 
   return (
     <section className="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 3xl:mx-92 my-10 md:my-12">
@@ -82,7 +92,7 @@ function FeaturesProduct() {
 
                     </div>
                     <button className="open-view-modal" >
-                      <p className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
+                      <p onClick={() => openProductView(product)} className="text-gray-12 font-medium absolute inset-x-0 bottom-0 rounded rounded-t-none text-center text-[11px] bg-[#fcca19]">
                         Quick View
                       </p>
                     </button>
@@ -161,6 +171,10 @@ function FeaturesProduct() {
           </div>
         </div>
       </div>
+
+      <CustomModal contentKey="Featured_Modal">
+          {selectedProduct && <QuickCard product={selectedProduct} />}
+      </CustomModal>
     </section>
   )
 }
